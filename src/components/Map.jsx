@@ -1,10 +1,10 @@
 import React from "react";
 import { MapContainer, TileLayer, useMap, Marker, Popup } from "react-leaflet";
-import { useState, useEffect } from "react";
 import L from "leaflet";
-
 import iconLocation from "../assets/icon-location.svg";
 
+
+// this is for the custon pin on the map. This works when you are given the image of the custome pine, otherwise, it will live in another file.
 const customIcon = L.icon({
   iconUrl: iconLocation,
   iconSize: [30, 40],
@@ -12,7 +12,8 @@ const customIcon = L.icon({
   popupAnchor: [0, -40],
 });
 
-function Map() {
+function Map({address}) {
+    
   return (
     <div>
       <MapContainer
