@@ -4,7 +4,9 @@ function Address() {
   return (
     <div>
       <section
-        className="relative uppercase p-8 bg-white rounded-lg mx-8 shadow-md grid grid-cols-1 md:grid-cols-4 text-center md:text-start gap-4 md:max-w-4xl md:mx-auto -mb-60 md:-mb-15"
+        className="relative uppercase p-8 bg-white 
+        rounded-lg mx-8 shadow-md grid grid-cols-1 md:grid-cols-4 
+        text-center md:text-start gap-4 md:max-w-4xl md:mx-auto -mb-60 md:-mb-15"
         style={{ zIndex: "500" }}
       >
         <div className="md:border-r md:border-gray-400">

@@ -3,6 +3,7 @@ import patternBgDesktop from "../assets/pattern-bg-desktop.png";
 import arrow from "../assets/icon-arrow.svg";
 
 function Form({ ipAddress, setIpAddress, fetchData }) {
+  
   function handleSubmit(e){
     e.preventDefault()
     fetchData()
