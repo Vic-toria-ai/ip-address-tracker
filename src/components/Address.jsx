@@ -1,8 +1,9 @@
 import React from "react";
 
-function Address() {
+function Address({address}) {
   return (
     <div>
+      {address && <>
       <section
         className="relative uppercase p-8 bg-white 
         rounded-lg mx-8 shadow-md grid grid-cols-1 md:grid-cols-4 
@@ -10,33 +11,34 @@ function Address() {
         style={{ zIndex: "500" }}
       >
         <div className="md:border-r md:border-gray-400">
-          <h1 className="font-semibold text-gray-700 tracking-wider mb-2">
+          <h1 className="font-semibold text-gray-700 tracking-wider mb-2 md:mb-0">
             IP Address
           </h1>
-          <p className="font-bold text-gray-800 text-lg">192.212.174.101</p>
+          <p className="font-bold text-gray-800 text-md">{address.ip}</p>
         </div>
 
         <div className="md:border-r md:border-gray-400">
-          <h1 className="font-semibold text-gray-700 tracking-wider mb-2">
+          <h1 className="font-semibold text-gray-700 tracking-wider mb-2 md:mb-0">
             location
           </h1>
-          <p className="font-bold text-gray-800 text-lg">Brooklyn, NY</p>
+          <p className="font-bold text-gray-800 text-md">{address.location.city},{address.location.region}</p>
         </div>
 
         <div className="md:border-r md:border-gray-400">
-          <h1 className="font-semibold text-gray-700 tracking-wider mb-2">
+          <h1 className="font-semibold text-gray-700 tracking-wider mb-2 md:mb-0">
             timezone
           </h1>
-          <p className="font-bold text-gray-800 text-lg">utc -05:00</p>
+          <p className="font-bold text-gray-800 text-md">UTC {address.location.timezone}</p>
         </div>
 
         <div>
-          <h1 className="font-semibold text-gray-700 tracking-wider mb-2">
+          <h1 className="font-semibold text-gray-700 tracking-wider mb-2 md:mb-0">
             isp
           </h1>
-          <p className="font-bold text-gray-800 text-lg">spacex starlink</p>
+          <p className="font-bold text-gray-800 text-md">{address.isp}</p>
         </div>
       </section>
+      </>}
     </div>
   );
 }
