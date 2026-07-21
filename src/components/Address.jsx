@@ -1,9 +1,9 @@
 import React from "react";
 
 function Address({address}) {
+  const location = address?.location
   return (
     <div>
-      {address && <>
       <section
         className="relative uppercase p-8 bg-white 
         rounded-lg mx-8 shadow-md grid grid-cols-1 md:grid-cols-4 
@@ -14,31 +14,44 @@ function Address({address}) {
           <h1 className="font-semibold text-gray-700 tracking-wider mb-2 md:mb-0">
             IP Address
           </h1>
-          <p className="font-bold text-gray-800 text-md">{address.ip}</p>
+          <p className="font-bold text-gray-800 text-md">{address?.ip ? address?.ip:"No Data."}</p>
         </div>
 
         <div className="md:border-r md:border-gray-400">
           <h1 className="font-semibold text-gray-700 tracking-wider mb-2 md:mb-0">
             location
           </h1>
-          <p className="font-bold text-gray-800 text-md">{address.location.city},{address.location.region}</p>
+          <p className="font-bold text-gray-800 text-md">
+            {
+              location?.city && location?.region ?
+              `${location?.city}, ${location?.region}`:"Location not Found."
+            }
+          </p>
         </div>
 
         <div className="md:border-r md:border-gray-400">
           <h1 className="font-semibold text-gray-700 tracking-wider mb-2 md:mb-0">
             timezone
           </h1>
-          <p className="font-bold text-gray-800 text-md">UTC {address.location.timezone}</p>
+          <p className="font-bold text-gray-800 text-md">
+            {
+              location?.timezone ? `UTC ${location?.timezone}`:"No Data."
+            }
+          </p>
         </div>
 
         <div>
           <h1 className="font-semibold text-gray-700 tracking-wider mb-2 md:mb-0">
             isp
           </h1>
-          <p className="font-bold text-gray-800 text-md">{address.isp}</p>
+          <p className="font-bold text-gray-800 text-md">
+            {
+              address?.isp ? address?.isp : "No Data."
+            }
+          </p>
         </div>
       </section>
-      </>}
+      
     </div>
   );
 }
