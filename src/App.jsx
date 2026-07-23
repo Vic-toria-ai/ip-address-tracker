@@ -14,7 +14,8 @@ function App() {
       // getting apiKey from .env file
       const apiKey = import.meta.env.VITE_API_KEY;
       // forming url with parameters
-      const url = `https://geo.ipify.org/api/v2/country,city?apiKey=${apiKey}&ipAddress=${ipAddress}`;
+      const url = `https://geo.ipify.org/api/v2/country,city?apiKey=${apiKey}&ipAddress=${ipAddress}`
+      // `https://geo.ipify.org/api/v2/country,city?apiKey=${apiKey}&ipAddress=${ipAddress}`;
       // fetching data from API server
       const response = await fetch(url);
       console.log("Look here: ", response.ok, response.status);
